@@ -1,0 +1,435 @@
+[
+  {
+    "type": "function",
+    "name": "approvedInstitutions",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "isAdmin",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "institutionNames",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "credentialIdPlusOneByHash",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getCredentialIdByHash",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "certHash",
+        "type": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "credentialId",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "verifyCredentialByHash",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "certHash",
+        "type": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "credentialId",
+        "type": "uint256"
+      },
+      {
+        "name": "institution",
+        "type": "address"
+      },
+      {
+        "name": "student",
+        "type": "address"
+      },
+      {
+        "name": "issuedAt",
+        "type": "uint256"
+      },
+      {
+        "name": "isValid",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "verifyCredential",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "credentialId",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "certHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "institution",
+        "type": "address"
+      },
+      {
+        "name": "student",
+        "type": "address"
+      },
+      {
+        "name": "issuedAt",
+        "type": "uint256"
+      },
+      {
+        "name": "isValid",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getStudentCredentialsPage",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "student",
+        "type": "address"
+      },
+      {
+        "name": "offset",
+        "type": "uint256"
+      },
+      {
+        "name": "limit",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "page",
+        "type": "uint256[]"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getStudentCredentials",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "student",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "issueCredential",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "name": "certHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "student",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "revokeCredential",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "name": "credentialId",
+        "type": "uint256"
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "nextCredentialId",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "InstitutionAdded",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "institution",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "InstitutionRemoved",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "institution",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "CredentialIssued",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "credentialId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "institution",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "student",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "certHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "issuedAt",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "CredentialRevoked",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "credentialId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "revokedBy",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "revokedAt",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "CredentialStudentUpdated",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "credentialId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "oldStudent",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "newStudent",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "updatedAt",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "AdminReplaced",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "oldAdmin",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "newAdmin",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "ProposalCreated",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "proposer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "data",
+        "type": "bytes"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "ProposalConfirmed",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "admin",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "confirmations",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "ProposalExecuted",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "ProposalCancelledEvent",
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "cancelledBy",
+        "type": "address"
+      }
+    ]
+  }
+]

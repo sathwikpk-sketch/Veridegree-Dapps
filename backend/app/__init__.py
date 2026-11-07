@@ -1,0 +1,1 @@
+"""VeriDegree FastAPI application package."""

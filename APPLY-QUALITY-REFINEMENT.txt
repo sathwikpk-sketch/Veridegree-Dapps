@@ -1,0 +1,35 @@
+VERIDEGREE FRONTEND QUALITY REFINEMENT
+
+This is a safe overlay patch for the existing `veridegree` project. It does not
+contain or replace backend/.env, frontend/.env.local, MetaMask keys, or the deployed
+contract.
+
+HOW TO APPLY (Windows)
+1. Stop the Next.js frontend terminal with Ctrl+C. Leave the FastAPI backend running.
+2. Extract this ZIP inside the existing `veridegree` project folder — the folder that
+   directly contains `backend`, `frontend`, `contracts`, and `docs`.
+3. When Windows asks, allow the listed frontend files to be replaced.
+4. Open a terminal in `veridegree/frontend` and run:
+      npm run dev
+5. Refresh http://localhost:3000 with Ctrl+F5.
+
+Files replaced:
+- frontend/next.config.ts
+- frontend/src/app/globals.css
+- frontend/src/components/InteractiveCredential.tsx
+- frontend/src/components/ScrollReveal.tsx
+
+File added:
+- docs/FRONTEND_QUALITY.md
+
+The update makes motion quieter and lighter, removes the simulated scan button so it
+cannot be mistaken for real verification, keeps the credential tilt/flip interaction,
+adds a reduced-motion path, makes scroll reveals progressively enhanced, and scopes
+Turbopack to the frontend directory to address the multiple-lockfile workspace warning.
+
+After the app starts, run these checks from `frontend` in a second terminal:
+      npm run lint
+      npm run build
+
+A production build and local lint still need to be confirmed on your Windows machine,
+where the project's npm dependencies are installed.
