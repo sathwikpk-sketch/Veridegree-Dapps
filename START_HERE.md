@@ -1,6 +1,6 @@
 # VeriDegree — Start Here (Windows)
 
-This repository contains the existing Solidity/Hardhat project plus the new FastAPI backend and Next.js frontend. The deployed v2 contract is already configured as the default address:
+The repository contains a Solidity/Hardhat contract project, a FastAPI backend, and a Next.js frontend. The example configuration uses:
 
 `0x1d355800fFA522d654cFd5186B6eE213aA292e75` on Sepolia (`11155111`).
 
@@ -116,6 +116,9 @@ npm run compile
 - If certificate verification says `Not found`, make sure the uploaded file is byte-for-byte identical to the file registered by the institution.
 - If `npm install` or `pip install` fails, check internet access / registry connectivity and retry. The source archive intentionally does not include dependency folders.
 
-## 7. Important validation note
+## 7. Before submitting or demonstrating
 
-The contract deployment and Etherscan source verification were completed by the project owner. The owner also reported 50 passing Hardhat tests and successful Solidity compilation. The included backend tests have been run in the packaging environment. Install the frontend/backend dependencies and run the build and live Sepolia flow on the target computer before claiming the whole dApp has passed end-to-end testing.
+1. Run all Solidity, backend, and frontend checks above.
+2. Confirm the contract address and Sepolia source verification in Etherscan.
+3. Test the complete flow: issue, verify, revoke, and verify again.
+4. Use only test wallets and test ETH.
