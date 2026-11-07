@@ -12,6 +12,7 @@ node_modules/
 frontend/node_modules/
 frontend/.next/
 frontend/out/
+*.tsbuildinfo
 artifacts/
 cache/
 coverage/
